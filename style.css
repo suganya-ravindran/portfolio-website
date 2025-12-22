@@ -1,0 +1,346 @@
+/* --- 1. Variables & Reset --- */
+:root {
+    --bg-main: #0f172a;       /* Slate 900 */
+    --bg-secondary: #1e293b;  /* Slate 800 */
+    --primary: #3b82f6;       /* Blue 500 */
+    --accent: #06b6d4;        /* Cyan 500 */
+    --text-main: #f8fafc;     /* Slate 50 */
+    --text-muted: #94a3b8;    /* Slate 400 */
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --border: 1px solid rgba(255, 255, 255, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* --- 2. Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: var(--border);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+.nav-btn {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    color: var(--primary) !important;
+}
+
+.nav-btn:hover {
+    background: var(--primary);
+    color: white !important;
+}
+
+/* --- 3. Hero Section --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 40%);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin: 1rem 0;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.hero-btns {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.primary-btn:hover { background: var(--accent); transform: translateY(-3px); }
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-main);
+}
+
+.secondary-btn:hover { border-color: white; }
+
+/* --- 4. Layout & Grid --- */
+.section-padding { padding: 6rem 5%; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.three-col { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+/* --- 5. Cards & Styling --- */
+.card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: var(--border);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.tags {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* --- 6. Timeline (Experience) --- */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    border-left: 2px solid rgba(255,255,255,0.1);
+    padding-left: 2rem;
+}
+
+.timeline-item { margin-bottom: 3rem; position: relative; }
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.6rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.date { color: var(--accent); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+.company { display: block; color: var(--text-muted); font-style: italic; margin-bottom: 1rem; }
+
+/* --- 7. Footer --- */
+footer {
+    text-align: center;
+    padding: 4rem 5%;
+    border-top: var(--border);
+    background: var(--bg-secondary);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover { color: white; transform: scale(1.2); }
+
+/* --- 8. Animation Classes --- */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hamburger { display: none; }
+
+/* --- 9. About Page & Special Layouts --- */
+
+/* Page Header for About */
+.page-header {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at bottom, rgba(59, 130, 246, 0.15), transparent 60%);
+    margin-top: 60px;
+}
+
+/* Split Layout */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-text { flex: 1; font-size: 1.1rem; color: var(--text-muted); }
+.about-text p { margin-bottom: 1.5rem; }
+.about-text strong { color: var(--text-main); font-weight: 600; }
+.about-text em { color: var(--primary); font-style: normal; }
+
+.signature {
+    margin-top: 2rem;
+    font-family: cursive;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.about-image { flex: 1; position: relative; max-width: 400px; }
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--primary);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.experience-badge span { display: block; font-size: 2rem; font-weight: 700; color: var(--primary); line-height: 1; }
+.experience-badge p { font-size: 0.8rem; margin-top: 5px; color: var(--text-muted); }
+
+/* Education Cards */
+.education-card { display: flex; gap: 1.5rem; align-items: flex-start; }
+.edu-icon { font-size: 2.5rem; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 10px; }
+.edu-content h3 { font-size: 1.4rem; margin-bottom: 0.2rem; }
+.edu-content .school { color: var(--primary); margin-bottom: 0.5rem; }
+
+.edu-details {
+    list-style: none;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+}
+
+.edu-details li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+.edu-details li::before { content: '▹'; color: var(--accent); margin-right: 8px; }
+
+/* Single Project Centering */
+.center-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-grid .project-card {
+    max-width: 600px;
+    width: 100%;
+}
+.project-card ul li { margin-bottom: 8px; }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: block; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
+    
+    .split-layout { flex-direction: column-reverse; }
+    .about-image { width: 100%; max-width: 100%; }
+    .experience-badge { right: 0; }
+    .education-card { flex-direction: column; }
+}

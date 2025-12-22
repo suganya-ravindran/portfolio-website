@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Suganya Ravindran</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SR.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#contact" class="nav-btn">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container fade-in-up">
+            <h1>The Technical Evolution</h1>
+            <p>From IT Support & Operations to Cloud Architecture.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="split-layout">
+                
+                <div class="about-text hidden">
+                    <h2 class="section-title" style="text-align: left;">Full Circle</h2>
+                    <p>
+                        My career began in the trenches of <strong>IT Support at IBM</strong>. As a Technical Support Executive, I spent two years troubleshooting network security and resolving system crashes, building a "fix-it-first" mindset that still drives me today.
+                    </p>
+                    <p>
+                        I then took a strategic pivot to <strong>Ernst & Young</strong> as a Advanced Tax Analyst to understand the business side of global operations. While managing data governance and compliance for mobile employees, I worked closely with systems like SAP. It was there—watching how technology underpinned complex business workflows—that I realized I missed the technical field.
+                    </p>
+                    <p>
+                        I transitioned back into tech operations at <strong>Kaleyra</strong>, managing API infrastructure, and am now fully committed to <strong>Cloud Architecture</strong>. I combine the troubleshooting skills from IBM with the rigorous compliance discipline from EY to build secure, business-ready cloud solutions.
+                    </p>
+                    <div class="signature">
+                        <p>Suganya Ravindran</p>
+                    </div>
+                </div>
+
+                <div class="about-image hidden">
+                    <img src="suganya.jpg" alt="Suganya Ravindran">
+                    <div class="experience-badge">
+                        <span>6+</span>
+                        <p>Years Professional Experience</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-darker">
+        <div class="container">
+            <h2 class="section-title">Education & Foundation</h2>
+            <div class="grid-layout">
+                
+                <div class="card education-card hidden">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-content">
+                        <span class="year">2024 - Present</span>
+                        <h3>AAS in Cloud Computing</h3>
+                        <p class="school">Brigham Young University - Idaho</p>
+                        <p class="gpa">GPA: 3.94 / 4.0</p>
+                        <ul class="edu-details">
+                            <li>Focus on Serverless Architecture</li>
+                            <li>Linux System Administration</li>
+                            <li>Cloud Security Principles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card education-card hidden">
+                    <div class="edu-icon"><i class="fas fa-university"></i></div>
+                    <div class="edu-content">
+                        <span class="year">2013 - 2016</span>
+                        <h3>BS in Math, Electronics & CS</h3>
+                        <p class="school">St. Joseph’s University, Bangalore</p>
+                        <ul class="edu-details">
+                            <li>Strong foundation in Logic & Calculus</li>
+                            <li>Embedded Systems & Electronics</li>
+                            <li>C++ and Data Structures</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <h2>Ready to optimize your cloud infrastructure?</h2>
+            <div class="social-links">
+                <a href="mailto:suganyar82@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/suganya-ravindran" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/suganya-ravindran" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">© 2025 Suganya Ravindran. Deployed on AWS.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+        document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
