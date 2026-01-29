@@ -324,19 +324,21 @@ footer {
 .edu-details li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.3rem; }
 .edu-details li::before { content: '▹'; color: var(--accent); margin-right: 8px; }
 
-/* --- UPDATED SECTION FOR PROJECTS --- */
+/* --- SECTION FOR PROJECTS --- */
 /* Projects Grid Alignment */
 .center-grid {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap; /* Allows multiple cards to sit side-by-side */
+    align-items: stretch;   /* CHANGED: This forces both cards to be equal height */
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
 .center-grid .project-card {
     max-width: 550px;
     width: 100%;
+    display: flex;          /* Ensures the internal layout fills the height */
+    flex-direction: column; /* Stacks items vertically */
 }
 
 /* Specific styling for Project Lists (Checkmarks) */
@@ -345,6 +347,7 @@ footer {
     margin: 15px 0;
     color: var(--text-muted);
     font-size: 0.9rem;
+    flex-grow: 1;           /* ADDED: This pushes the button to the bottom */
 }
 
 .project-card ul li {
@@ -356,7 +359,7 @@ footer {
 .project-card ul li i {
     color: var(--accent);
     margin-right: 10px;
-    margin-top: 5px; /* Aligns icon with first line of text */
+    margin-top: 5px;
 }
 
 /* Mobile Responsiveness */
