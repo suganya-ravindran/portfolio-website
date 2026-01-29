@@ -158,6 +158,8 @@ nav {
     border-radius: 12px;
     border: var(--border);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -173,7 +175,8 @@ nav {
 }
 
 .tags {
-    margin-top: 1.5rem;
+    margin-top: auto; /* Pushes tags to bottom of card */
+    padding-top: 1.5rem;
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
@@ -321,17 +324,40 @@ footer {
 .edu-details li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.3rem; }
 .edu-details li::before { content: '▹'; color: var(--accent); margin-right: 8px; }
 
-/* Single Project Centering */
+/* --- UPDATED SECTION FOR PROJECTS --- */
+/* Projects Grid Alignment */
 .center-grid {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows multiple cards to sit side-by-side */
+    gap: 2rem;
 }
+
 .center-grid .project-card {
-    max-width: 600px;
+    max-width: 550px;
     width: 100%;
 }
-.project-card ul li { margin-bottom: 8px; }
+
+/* Specific styling for Project Lists (Checkmarks) */
+.project-card ul {
+    list-style: none;
+    margin: 15px 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.project-card ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.project-card ul li i {
+    color: var(--accent);
+    margin-right: 10px;
+    margin-top: 5px; /* Aligns icon with first line of text */
+}
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -343,4 +369,6 @@ footer {
     .about-image { width: 100%; max-width: 100%; }
     .experience-badge { right: 0; }
     .education-card { flex-direction: column; }
+    
+    .center-grid .project-card { max-width: 100%; } /* Full width on mobile */
 }
