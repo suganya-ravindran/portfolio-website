@@ -335,7 +335,7 @@ footer {
 }
 
 .center-grid .project-card {
-    max-width: 550px;
+    max-width: 350px;
     width: 100%;
     display: flex;          /* Ensures the internal layout fills the height */
     flex-direction: column; /* Stacks items vertically */
@@ -347,7 +347,7 @@ footer {
     margin: 15px 0;
     color: var(--text-muted);
     font-size: 0.9rem;
-    flex-grow: 1;           /* ADDED: This pushes the button to the bottom */
+    flex-grow: 1;           /* This pushes the button to the bottom */
 }
 
 .project-card ul li {
