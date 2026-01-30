@@ -335,7 +335,7 @@ footer {
 }
 
 .center-grid .project-card {
-    max-width: 350px;
+    max-width: 550px;
     width: 100%;
     display: flex;          /* Ensures the internal layout fills the height */
     flex-direction: column; /* Stacks items vertically */
