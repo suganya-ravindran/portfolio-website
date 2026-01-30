@@ -325,20 +325,24 @@ footer {
 .edu-details li::before { content: '▹'; color: var(--accent); margin-right: 8px; }
 
 /* --- SECTION FOR PROJECTS --- */
+
 /* Projects Grid Alignment */
 .center-grid {
     display: flex;
-    justify-content: center;
-    align-items: stretch;   /* CHANGED: This forces both cards to be equal height */
+    justify-content: space-between; /* Spreads them out to the edges */
+    align-items: stretch;           /* Forces equal height */
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1.5rem;                    /* Slightly smaller gap to give cards more room */
 }
 
 .center-grid .project-card {
-    max-width: 550px;
-    width: 100%;
-    display: flex;          /* Ensures the internal layout fills the height */
-    flex-direction: column; /* Stacks items vertically */
+    /* KEY CHANGE: Use percentage instead of pixels */
+    width: 32%;           /* Fits 3 in a row (32% * 3 = 96% + gaps) */
+    min-width: 370px;     /* Ensure they don't get unreadably thin */
+    max-width: none;      /* Remove the size limit so they can expand */
+
+    display: flex;          
+    flex-direction: column; 
 }
 
 /* Specific styling for Project Lists (Checkmarks) */
@@ -347,7 +351,7 @@ footer {
     margin: 15px 0;
     color: var(--text-muted);
     font-size: 0.9rem;
-    flex-grow: 1;           /* This pushes the button to the bottom */
+    flex-grow: 1;
 }
 
 .project-card ul li {
@@ -360,6 +364,7 @@ footer {
     color: var(--accent);
     margin-right: 10px;
     margin-top: 5px;
+    flex-shrink: 0;
 }
 
 /* Mobile Responsiveness */
